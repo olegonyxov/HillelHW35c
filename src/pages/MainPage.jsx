@@ -19,6 +19,7 @@ export default function MainPage({handleAuth}) {
       password
     });
     handleAuth(data.token);
+    localStorage.setItem("userToken", JSON.stringify(data.token));
     console.log(data);
   }
 
