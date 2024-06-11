@@ -4,7 +4,7 @@ import './App.scss';
 import MainPage from './pages/MainPage';
 import TodosPage from './pages/TodosPage';
 import { useState } from 'react';
-// 11111111111111111111111111111111111111111111111111111111111111111111111111
+// 2222222222222222222222222222222222222222222222222
 function App() {
   
   const [isAuthorized, setIsAuthorized] = useState(false);
