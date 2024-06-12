@@ -8,15 +8,19 @@ import TodoList from "../components/TodoList/TodoList";
 export default function TodosPage({token}) {
   const [todos, setTodos] = useState([]);
 
-  useEffect(async () => {
-    const result = await axios.get(API_URL + API_TODOS, {
-      headers: {
-        'Authorization': token
-      }
-    });
+const fetchData = async () => {
+  const result = await axios.get(API_URL + API_TODOS, {
+    headers: {
+      'Authorization': token
+    }
+  });
+  console.log(result);
+  setTodos(result.data)
+}
 
-    console.log(result);
-    setTodos(result.data)
+
+  useEffect(async () => {
+    fetchData()
 
   }, []);
 

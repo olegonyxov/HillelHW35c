@@ -3,7 +3,7 @@ import axios from "axios";
 import React from 'react'
 import { API_TODOS, API_URL } from "../../urls";
 
-export default function AddTodoItemForm({ auth }) {
+export default function AddTodoItemForm({ auth}) {
   const token = auth; 
   return (
     
@@ -21,7 +21,6 @@ export default function AddTodoItemForm({ auth }) {
             }
           });
           console.log(data)
-          
         }}
       >
         <Form>
