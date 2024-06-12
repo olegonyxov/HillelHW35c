@@ -3,9 +3,8 @@ import axios from 'axios';
 import { API_TODOS, API_URL } from '../../urls';
 
 export default function TodoList({ values = [], auth, renew }) {
-  const [editingItem, setEditingItem] = useState(null); // Состояние для отслеживания редактируемого элемента
-  const [editTitle, setEditTitle] = useState(''); // Состояние для хранения изменяемого заголовка
-
+  const [editingItem, setEditingItem] = useState(null); 
+  const [editTitle, setEditTitle] = useState(''); 
   async function removeItem(itemID) {
       const { data } = await axios.delete(`${API_URL}${API_TODOS}/${itemID}`, {
         headers: {
