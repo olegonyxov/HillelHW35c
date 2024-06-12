@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { API_TODOS, API_URL } from "../urls";
 import { Formik, Field, Form } from "formik";
+import AddTodoItemForm from "../components/AddTodoItemForm/AddTodoItemForm";
 import TodoList from "../components/TodoList/TodoList";
 
 export default function TodosPage({token}) {
@@ -22,35 +23,9 @@ export default function TodosPage({token}) {
   return (
     <div>
       <h2>Todos Page</h2>
+      <AddTodoItemForm auth={token} />
       {!todos.length && (<p>No todos available</p>)}
-
-      {!!todos.length && <TodoList values={todos} />}
-
-      <Formik
-        initialValues={({
-          value: ''
-        })}
-        onSubmit={async (values) => {
-          
-          const { data } = await axios.post(API_URL + API_TODOS, {
-            title: values.value
-          }, {
-            headers: {
-              'Authorization': token
-            }
-          });
-          console.log(data);
-          setTodos([
-            ...todos,
-            { title: data.title, id: data.id }
-          ])
-        }}
-      >
-        <Form>
-          <Field name="value" placeholder="Enter new todo value" />
-          <input type="submit" value="Save" />
-        </Form>
-      </Formik>
+      {!!todos.length && <TodoList values={todos} token = {token} />}
     </div>
   )
 }
