@@ -25,7 +25,7 @@ const fetchData = async () => {
   }, []);
 
   return (
-    <div>
+    <div div className="todos-page">
       <h2>Todos Page</h2>
       <AddTodoItemForm auth={token} renew = {fetchData}/>
       {!todos.length && (<p>No todos available</p>)}

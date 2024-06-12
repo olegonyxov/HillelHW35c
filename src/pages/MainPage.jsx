@@ -24,7 +24,7 @@ export default function MainPage({handleAuth}) {
   }
 
   return (
-    <div>
+    <div className="main-page">
       <SignInForm handleSignIn={handleSignIn} />
       <SignUpForm handleSignUp={handleSignUp} />
     </div>
