@@ -24,6 +24,7 @@ export default function TodoList({ values = [], auth, renew }) {
       console.log(data);
       renew()
       setEditingItem(null);
+      setEditTitle('')
     
   }
 
